@@ -19,7 +19,7 @@ class DistanceView(views.APIView):
         authorization = request.META.get('HTTP_AUTHORIZATION', '').replace("Basic", "").replace("\\s", "")
         username = base64.b64decode(authorization).decode("utf-8").split(":")[0]
         password = base64.b64decode(authorization).decode("utf-8").split(":")[1]
-        # print("Username >>>>> %s Password >>>>> %s"%(username,password))
+        print("------Received Request %s----- \n------authorization string %s------" % (request.data, authorization))
         if username != settings.BASIC_USERNAME and password != settings.BASIC_PASSWORD:
             return Response({"Message": "Authorization Failed"}, status=status.HTTP_401_UNAUTHORIZED)
         serializer = self.serializer_class(data=request.data)

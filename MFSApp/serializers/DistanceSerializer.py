@@ -23,15 +23,14 @@ class ActionSerializer(serializers.ModelSerializer):
         for a, b in itertools.combinations(x, 2):
             diff_x = b[0] - a[0]
             diff_y = a[1] - b[1]
-            result = math.sqrt(math.pow(diff_x, 2) + math.pow(diff_y, 2))
-            if result < close_dist:
-                close_dist = result
+            distance = math.sqrt(math.pow(diff_x, 2) + math.pow(diff_y, 2))
+            if distance < close_dist:
+                close_dist = distance
                 closest_points = (a, b)
-                print("--------Saving data:: Received Point %s | closest points------ %s " % (
-                    data['submittedpoints'], closest_points))
-                entity = models.PointsModel.objects.create(submittedpoints=data['submittedpoints'],
-                                                           closestpoints=closest_points)
-                entity.save()
-                print("Saved.....",entity.save())
                 print("---Successfully saved entity-----")
+        print("--------Saving data:: Received Point %s | closest points------ %s -----distance %s" % (
+            data['submittedpoints'], closest_points, distance))
+        entity = models.PointsModel.objects.create(submittedpoints=data['submittedpoints'],
+                                                   closestpoints=closest_points)
+        entity.save()
         return closest_points
