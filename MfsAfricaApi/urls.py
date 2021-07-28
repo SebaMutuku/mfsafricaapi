@@ -21,5 +21,5 @@ from MFSApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('api/msfafrica/calculatedistance', views.DistanceView.as_view(), name='CalculateDistance'),
+    url('api/msfafrica/calculatedistance', views.DistanceView.as_view(), name='getpoints'),
 ]
