@@ -24,8 +24,7 @@ class DistanceView(views.APIView):
             return Response({"Message": "Authorization Failed"}, status=status.HTTP_401_UNAUTHORIZED)
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            print(request.data.get("distance").split(","))
             resp = serializer.calculateDistance(request.data)
-            print("Response ", resp)
-            return Response({"Points":resp}, status=status.HTTP_200_OK)
-        return Response({"Error":"Invalid"}, status=status.HTTP_401_UNAUTHORIZED)
+            print("--------Response written---- ", resp)
+            return Response({"Points": resp}, status=status.HTTP_200_OK)
+        return Response({"Error": "Invalid"}, status=status.HTTP_401_UNAUTHORIZED)
