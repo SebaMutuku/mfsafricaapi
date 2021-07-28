@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1i$+=or@kuj0#u_6@*oz6tb4yingr!8g@%1wjq7@5u&j7k#dv9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 BASIC_USERNAME = "msfafrica"
 BASIC_PASSWORD = "test1234**"
 
