@@ -5,19 +5,19 @@ import ast
 import itertools
 
 from MFSApp.models import models
-from MFSApp.models.models import DistanceModel
+from MFSApp.models.models import PointsModel
 import numpy as np
 
 
 class ActionSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'submitpoints',
+            'submittedpoints',
         )
-        model = DistanceModel
+        model = PointsModel
 
     def calculateDistance(self, data):
-        x = ast.literal_eval(data['distance'])
+        x = ast.literal_eval(data['submittedpoints'])
         close_dist = float('inf')
         closest_points = ()
         for a, b in itertools.combinations(x, 2):
@@ -28,8 +28,10 @@ class ActionSerializer(serializers.ModelSerializer):
                 close_dist = result
                 closest_points = (a, b)
                 print("--------Saving data:: Received Point %s | closest points------ %s " % (
-                data['distance'], closest_points))
-                # entity = models.DistanceModel.objects.create(submitpoints=data['distance'], closestpoints=close_points)
-                # entity.save()
+                    data['submittedpoints'], closest_points))
+                entity = models.PointsModel.objects.create(submittedpoints=data['submittedpoints'],
+                                                           closestpoints=closest_points)
+                entity.save()
+                print("Saved.....",entity.save())
                 print("---Successfully saved entity-----")
         return closest_points

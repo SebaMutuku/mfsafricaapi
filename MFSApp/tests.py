@@ -1,12 +1,12 @@
 from django.urls import reverse
 from rest_framework import status
 
-from MFSApp.models.models import DistanceModel
+from MFSApp.models.models import PointsModel
 from rest_framework.test import APITestCase
 
 
 class ApiTest(APITestCase):
-    model = DistanceModel
+    model = PointsModel
     url=reverse("getpoints")
     def authorize_then_post(self):
         auth_bearer=self.client.credentials(HTTP_AUTHORIZATION="Basic bXNmYWZyaWNhOnRlc3QxMjM0Kio=")
@@ -19,7 +19,7 @@ class ApiTest(APITestCase):
 
     def test_getPoints(self):
         print("testing ...... getPoints")
-        data = self.model.objects.create(points="(2,2),(4,7)", distance="100")
+        data = self.model.objects.create(submittedpoints="(2,3),(4,7)", closestpoints="(2,3)")
         print("Data :: ",data)
         data.save()
         self.authorize_then_post()
