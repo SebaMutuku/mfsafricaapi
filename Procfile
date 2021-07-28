@@ -1,2 +1,2 @@
 
-web: gunicorn mfsafrica.wsgi --log-file -
+web: gunicorn MfsAfricaApi.wsgi --log-file -
