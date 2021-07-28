@@ -26,7 +26,7 @@ DEBUG = True
 BASIC_USERNAME = "msfafrica"
 BASIC_PASSWORD = "test1234**"
 
-ALLOWED_HOSTS = ['mfsafrica.herokuapp.com']
+ALLOWED_HOSTS = ['mfsafrica.herokuapp.com','127.0.0.1']
 
 # Application definition
 
@@ -130,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
