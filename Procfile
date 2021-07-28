@@ -1,2 +1,2 @@
 
-web: gunicorn djangoherokuapp.wsgi --log-file -
+web: gunicorn mfsafrica.wsgi --log-file -
