@@ -26,5 +26,5 @@ class DistanceView(views.APIView):
         if serializer.is_valid(raise_exception=True):
             resp = serializer.calculateDistance(request.data)
             print("--------Response written---- ", resp)
-            return Response({"Points": resp}, status=status.HTTP_200_OK)
+            return Response({"closest_points": resp}, status=status.HTTP_200_OK)
         return Response({"Error": "Invalid"}, status=status.HTTP_401_UNAUTHORIZED)

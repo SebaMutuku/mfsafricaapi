@@ -27,10 +27,10 @@ class ActionSerializer(serializers.ModelSerializer):
             if distance < close_dist:
                 close_dist = distance
                 closest_points = (a, b)
-                print("---Successfully saved entity-----")
         print("--------Saving data:: Received Point %s | closest points------ %s -----distance %s" % (
             data['submittedpoints'], closest_points, distance))
         entity = models.PointsModel.objects.create(submittedpoints=data['submittedpoints'],
                                                    closestpoints=closest_points)
         entity.save()
-        return closest_points
+        print("---Successfully saved entity-----")
+        return str(closest_points)
