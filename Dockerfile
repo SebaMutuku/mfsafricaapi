@@ -5,8 +5,6 @@ COPY requirements.txt /dockerApplication/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./MfsAfricaApi /dockerApplication/
 #ENTRYPOINT['entrypoint.sh']
-
-
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
