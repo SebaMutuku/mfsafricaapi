@@ -27,7 +27,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 BASIC_USERNAME = "msfafrica"
 BASIC_PASSWORD = "test1234**"
 
-ALLOWED_HOSTS = ['mfsafrica.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mfsafrica.herokuapp.com', '127.0.0.1','0.0.0.0']
 
 # Application definition
 

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msfafrica-api
+  labels:
+    app: msfafrica-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: msfafrica-api
+  template:
+    metadata:
+      labels:
+        name: msfafrica-api
+    spec:
+      containers:
+        - name: msfafrica-api
+          image: sebamutuku/msfafrica-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8097
+
