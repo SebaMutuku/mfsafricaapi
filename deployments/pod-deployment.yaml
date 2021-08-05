@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-registry
+spec:
+  containers:
+  - name: msfafricaapi
+    image: sebamutuku/msfafrica-api
+  imagePullSecrets:
+  - name: dockerloginsecret

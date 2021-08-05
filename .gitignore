@@ -1,0 +1,4 @@
+/dockerApplication
+MfsAfricaApi/db.sqlite3
+/deployments/docker-secret.yaml
+/deployments/secrets-deployment.yaml
