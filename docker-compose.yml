@@ -8,4 +8,4 @@ services:
       - "8097:8097"
     volumes:
       - .:/dockerApplication
-    command: python manage.py runserver 0.0.0.0:8097
+    command: python MfsAfricaApi/manage.py runserver 0.0.0.0:8097
