@@ -22,10 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG_PROPAGATE_EXCEPTIONS = True
 BASIC_USERNAME=os.environ['BASIC_USERNAME']
 BASIC_PASSWORD=os.environ['BASIC_PASSWORD']
+
 
 ALLOWED_HOSTS = ['mfsafrica.herokuapp.com', '127.0.0.1','0.0.0.0','192.168.64.2']
 
