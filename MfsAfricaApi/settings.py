@@ -23,7 +23,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEBUG_PROPAGATE_EXCEPTIONS = True
+# DEBUG_PROPAGATE_EXCEPTIONS = True
 BASIC_USERNAME=os.environ['BASIC_USERNAME']
 BASIC_PASSWORD=os.environ['BASIC_PASSWORD']
 
