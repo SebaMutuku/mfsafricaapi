@@ -6,7 +6,6 @@ import itertools
 
 from MFSApp.models import models
 from MFSApp.models.models import PointsModel
-import numpy as np
 
 
 class ActionSerializer(serializers.ModelSerializer):
